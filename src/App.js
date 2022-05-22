@@ -12,6 +12,7 @@ function App() {
 
   const [dice, setDice] = useState(allNewDice())
   const [tenzies, setTenzies] = useState(false)
+  const [count, setCount] = useState(0)
 
   const diceElements = dice.map((die) => <Die holdDice={() => holdDice(die.id)} isHeld={die.isHeld} key={die.id} value={die.value} />);
 
@@ -38,6 +39,11 @@ function App() {
   
 
   function rollDice() {
+    if(tenzies === false) {
+      setCount(prevCount => prevCount + 1)
+    } else {
+      setCount(0)
+    }
     setDice(oldDice => oldDice.map(die => {
       if (die.isHeld === false) {
         die.value = Math.ceil(Math.random() * 6);
@@ -48,10 +54,11 @@ function App() {
       if(tenzies) {
         setTenzies(false)
       }
+     
       return die;
     }));
   }
-
+console.log(count + 1)
   // different methods to update the holddice function
   // to flip isHeld property on the object in the array
   // that was clicked based on the 'id' passed into the function
@@ -80,6 +87,7 @@ function App() {
       <button className="roll-dice" onClick={rollDice}>
         {tenzies ? "New Game" : "Roll"}
       </button>
+      <div className="number-roll">You rolled : {count} times</div>
     </main>
   );
 }
