@@ -15,8 +15,8 @@ main{
 	justify-content: center;
 	flex-direction: column;
 	background-color: #E5E5E5;
-	max-width: 800px;
-	height: 400px;
+	width: auto;
+	height: auto;
 	border-radius: 10px;
 }
 
@@ -141,3 +141,40 @@ main{
   .fifth-face .column:nth-of-type(2) {
 	justify-content: center;
   }
+
+  .seconds {
+	display: flex;
+	justify-content: center;
+  }
+
+  .timer-buttons {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+  }
+
+  .start {
+	background-color: rgb(86, 86, 172);
+	color: white;
+	font-weight: bold;
+	border-radius: 5px;
+	margin-right: 5px;
+  }
+
+  .reset {
+	background-color: rgb(55, 178, 55);
+	color: white;
+	font-weight: bold;
+	border-radius: 5px;
+  }
+
+  .stop {
+	background-color: rgb(179, 31, 31);
+	color: white;
+	font-weight: bold;
+	border-radius: 5px;
+	margin-left: 5px;
+  }
+
+
+
