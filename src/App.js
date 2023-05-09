@@ -51,10 +51,12 @@ function App() {
       }
       if(tenzies) {
         die.isHeld = false;
-      }
-      if(tenzies) {
         setTenzies(false)
+        die.value = Math.ceil(Math.random() * 6);
       }
+      // if(tenzies) {
+      //   setTenzies(false)
+      // }
      
       return die;
     }));
